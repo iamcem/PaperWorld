@@ -1,2 +1,2 @@
 # PaperWorld
-Social App for Paper Reading
+PaperWorld: Turning Paper Reading into Enjoyable Play by Gamification and Socialization
