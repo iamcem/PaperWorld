@@ -1,5 +1,7 @@
 <style type="text/css">
-    
+    body {
+        background: url(bg.png)
+    }
     #auth-display-img {
         height:30px; 
         float:left;
@@ -93,97 +95,17 @@
                                                                               .icon-preview:hover span { display: block; cursor: text; }
     </style>
 
-
-    <!--div id="header" style="width: 100%; color: white; background-color: gray; padding: 5px;">
+    <div style="text-align: center; font-size: 20pt; margin-top: 20px">
+        <p>
+            <a href="home.jsp" style="color: black; text-decoration: none;">
+            <span style="margin-right: 10px" class="mdi-action-assignment-ind"></span>
+            </a>
+            <a href="search.jsp" style="color: black; text-decoration: none;">
+            <span style="margin-left: 10px" class="mdi-file-cloud"></span>
+            </a>
+        </p>
+    </div>
     
-        <h3>
-            <a href="/PaperWorld/welcome.jsp" style="text-decoration: none; color: white;">HOME</a>  |  
-            <a href="javascript:{}" onclick="document.getElementById('play').submit();">PLAY</a>
-        </h3>
-        <form id="play" action="Play" method="POST">
-            <input type="hidden" name="id" value="${fbUser.id}" />
-        </form>
-        <p>Hello! ${fbUser.name} with level ${score}</p>
-    </div-->
-
-    <div class="bs-docs-section clearfix">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="bs-component">
-                    <div class="navbar navbar-default" style="font-size: 130%">
-                            <div class="navbar-header">
-                                <a class="navbar-brand" href="home.jsp">PaperWorld</a>
-                            </div>
-
-                            <c:choose>
-                                <c:when test="${pageContext.request.requestURI.equals('/PaperWorld/home.jsp')}">
-                                    <div class="navbar-collapse collapse navbar-responsive-collapse">
-                                        <ul class="nav navbar-nav">
-                                            <li class="active">
-                                                <a href="home.jsp">
-                                                    <span class="mdi-action-account-circle"></span> HOME
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="search.jsp">
-                                                    <span class="mdi-action-account-child"></span>
-                                                    EXPLORE
-                                                </a>
-                                            </li>
-                                        </ul>
-
-                                        <ul class="nav navbar-nav navbar-right">
-                                            <li>
-                                                <a style="margin-top: -3px;">
-                                                <span class="mdi-action-assignment-ind"></span> ${fbUser.name}
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a style="margin-top: -3px;">
-                                                <span class="mdi-action-assessment"></span>
-                                                ${score} Pts.
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </c:when>
-                            <c:otherwise>
-                                <div class="navbar-collapse collapse navbar-responsive-collapse">
-                                    <ul class="nav navbar-nav">
-                                        <li>
-                                            <a href="home.jsp">
-                                                <span class="mdi-action-account-circle"></span> HOME
-                                            </a>
-                                        </li>
-                                        <li class="active">
-                                            <a href="search.jsp">
-                                                <span class="mdi-action-account-child"></span>
-                                                EXPLORE
-                                            </a>
-                                        </li>
-                                    </ul>
-
-                                    <ul class="nav navbar-nav navbar-right">
-                                        <li>
-                                            <a style="margin-top: -3px;">
-                                                <span class="mdi-action-assignment-ind"></span> ${fbUser.name}
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a style="margin-top: -3px;">
-                                                <span class="mdi-action-assessment"></span>
-                                                ${score} Pts.
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </c:otherwise>
-                        </c:choose>
-
-
-
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div style="text-align: right; position: static; right: 30px; margin-bottom: 5px;">
+        ${fbUser.name}&nbsp;&nbsp;|&nbsp;&nbsp;${score} points
     </div>

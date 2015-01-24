@@ -13,14 +13,14 @@ public class Discussion {
     private int discussion_id;
     private long user_id;
     private int paper_id;
-    private String comment;
+    private String summary;
     private int vote;
 
-    public Discussion(int discussion_id, long user_id, int paper_id, String comment, int vote) {
+    public Discussion(int discussion_id, long user_id, int paper_id, String summary, int vote) {
         this.discussion_id = discussion_id;
         this.user_id = user_id;
         this.paper_id = paper_id;
-        this.comment = comment;
+        this.summary = summary;
         this.vote = vote;
     }
 
@@ -48,12 +48,12 @@ public class Discussion {
         this.paper_id = paper_id;
     }
 
-    public String getComment() {
-        return comment;
+    public String getSummary() {
+        return summary;
     }
 
-    public void setComment(String comment) {
-        this.comment = comment;
+    public void setSummary(String summary) {
+        this.summary = summary;
     }
 
     public int getVote() {

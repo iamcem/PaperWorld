@@ -19,33 +19,26 @@
         <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
     </head>
     <body>
-        <jsp:include page="/header.jsp" flush="true" />
+
         <div class="container">
 
-            <div class="well col-lg-12">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div style="text-align: center;">
+            <jsp:include page="/header.jsp" flush="true" />
 
-                            <h2>Enjoy reading with readers from around the world</h2>
-
-                            <br>
-
-                            <div class="form-control-wrapper">
-                                <form method="POST" action="Explore">
-                                    <div class="col-lg-11" style="padding-top: 15px;">
-                                        <input style="text-align: center; height: 30px; font-size: 20px;" type="text" class="form-control empty" name="inputSearch" placeholder="Search for a paper in PaperWorld"><span class="material-input"></span>
-                                    </div>
-                                    <div class="col-lg-1">
-                                        <button type="submit" class="btn btn-primary withripple"><i class="mdi-action-search"></i><div class="ripple-wrapper"></div></button>
-                                    </div>
-                                </form>
-                            </div>       
-
-                        </div>
-                    </div>
-                </div>
-
+            <div class="well" style="text-align: center;">
+                <h4>Enjoy reading with readers from around the world</h4><br>
+                <table>
+                    <tr>
+                        <td width="670px">
+                            <form method="POST" action="Explore">
+                                <input style="text-align: center; height: 30px; font-size: 14px;" type="text" class="form-control empty" name="inputSearch" placeholder="Search for a paper in PaperWorld">
+                                <span class="material-input"></span>
+                            </form>
+                        </td>
+                        <td>
+                            <i class="mdi-action-search"></i>
+                        </td>
+                    </tr>
+                </table>   
             </div>
         </div>
     </body>

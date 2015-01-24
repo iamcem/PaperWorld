@@ -35,7 +35,7 @@ public class Play extends HttpServlet {
                 User.addUser(user_id);
                 User.find(user_id);
                 hs.setAttribute("score", user.getScore());
-                getServletContext().getRequestDispatcher("/play.jsp").forward(request, response);
+                getServletContext().getRequestDispatcher("/home.jsp").forward(request, response);
             } else {
                 // login for current user
                 int score = user.getScore();
@@ -51,7 +51,7 @@ public class Play extends HttpServlet {
                     }
                 }
                 hs.setAttribute("score", score);
-                getServletContext().getRequestDispatcher("/play.jsp").forward(request, response);
+                getServletContext().getRequestDispatcher("/home.jsp").forward(request, response);
             }
 
         }

@@ -56,4 +56,11 @@ public class Paper {
         ps.setString(1, author);
         return ps.executeUpdate();
     }
+    
+    public static int search(String title) throws ClassNotFoundException, SQLException {
+        String cmd = "select * from paper where title = '" + title + "'";
+        Connection con = ConnectionAgent.getInstance();
+        PreparedStatement ps = con.prepareStatement(cmd);
+        return ps.executeUpdate();
+    }
 }

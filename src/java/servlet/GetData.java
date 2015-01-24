@@ -10,17 +10,31 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import model.Annotation;
+import model.Paper;
+import model.Readed;
 
 public class GetData extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, ClassNotFoundException, SQLException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            HttpSession hs = request.getSession();
+            String title = request.getParameter("title");
+            String author = request.getParameter("author");
+            String user_id = request.getParameter("user_id");
             String content = request.getParameter("content");
-            System.out.println("The content I got it is:\n" + content);
-            Annotation.push(content);
+            String score = request.getParameter("score");
+            
+            System.out.println("The content I got it is:\n" + title + author + user_id + score);
+            
+            Paper.addPaper(title, author);
+            String paper_id = "" + Paper.search(title);
+            
+            System.out.println("paper id after added to readed is = " + paper_id);
+
+            Readed.addReaded(paper_id, user_id, content, score);
+            
+            System.out.println("Thank you.");
+            
             }
         }
 
